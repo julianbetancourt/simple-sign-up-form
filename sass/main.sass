@@ -1,0 +1,108 @@
+$signup-color: #428bca
+
+*
+  box-sizing: border-box
+  //margin: 0
+
+body
+  min-height: 100vh
+  background: linear-gradient(rgba(7, 8, 8, 0.85),rgba(7, 8, 8, 0.85)),  url('https://snap-photos.s3.amazonaws.com/img-thumbs/960w/63348D1909.jpg') no-repeat center
+  background-size: cover
+  color: white
+  font-family: 'Montserrat', sans-serif
+  text-transform: uppercase
+
+h1,h2,h3
+  margin: 0
+  text-align: center
+  font-weight: 300
+
+.title
+  font-size: 1.125rem /* 18/16 */
+  margin-top: 0.625rem /* 10/16 */
+
+.sign-up
+  letter-spacing: 0.313rem /* 5/16 */
+
+.container
+  max-width: 23.75rem /* 380/16 */
+  margin: 0 auto
+
+.input-container
+  text-align: center
+  position: relative
+  display: inline-block
+  width: 100%
+
+.placeholder
+  position: absolute
+  bottom: 0.438rem /* 7/16 */
+  left: 0.125rem /* 2/16 */
+  z-index: 0
+
+.line
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 0.063rem /* 1/16 */
+  z-index: 3
+  &::before, &::after
+    content: ''
+    position: absolute
+    bottom: 0.125rem /* 2/16 */
+    width: 0
+    height: 0.125rem /* 2/16 */
+
+  &::before
+    left: 50%
+  &::after
+    right: 50%
+
+input.fancy
+  margin: 0
+  margin-top: 3.125rem /* 50/16 */
+  border: none
+  border-bottom: 0.063rem solid white /* 1/16 */
+  position : relative
+  background: transparent
+  padding: 0.188rem /* 3/16 */
+  width: 100%
+  z-index: 1
+  &:focus,
+  &.used,
+  &:valid
+    outline: 0
+    & ~ .line
+      &:before, &:after
+        width: 50%
+
+    & ~ .placeholder
+      font-size: .8em
+      bottom: 1.875rem /* 30/16 */
+
+.button
+  display: block
+  padding: 0.625rem /* 10/16 */
+  color: white
+  cursor: pointer
+  transition: all .2s ease
+  border: 0.063rem solid white
+  //border-color: #bbb
+  transition: background-color .3 ease-out, border .3 ease-out
+  &:hover
+    background-color: $signup-color
+    border: 0.063rem solid $signup-color
+.form-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  height: 82vh
+
+.button-login
+  background: transparent
+  font-weight: bold
+  width: 100%
+  margin: 2.5rem auto 0 /* 40/16 */
+  &:focus
+    outline: none
